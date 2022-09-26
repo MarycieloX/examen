@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # add datebase
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:123456789@dbaws.cwntvuamkmig.us-east-1.rds.amazonaws.com/SisAcademico'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:123456789@dbaws.cwntvuamkmig.us-east-1.rds.amazonaws.com/SisAcademico'
 app.config['SQLALCHEMY_TRACK_MODEFICATIONS'] = False
 
 SQLAlchemy(app)
