@@ -12,17 +12,17 @@
      </li>
      <li>
         <label for="msg">Estudiante: </label>
-        <select name="id_escuela"> 
-          {% for recorrido in vi %}
+        <select name="id_estudiante"> 
+          {% for recorrido in vist %}
           <option value="{{recorrido.id_estudiante}}">{{recorrido.nombres}}</option>
           {% endfor %}
         </select>
      </li>
      <li>
         <label for="msg">Curso: </label>
-        <select name="id_escuela"> 
+        <select name="id_curso"> 
           {% for recorrido in vis %}
-          <option value="{{recorrido.id_estudiante}}">{{recorrido.nombre}}</option>
+          <option value="{{recorrido.id_curso}}">{{recorrido.nombre}}</option>
           {% endfor %}
         </select>
      </li>
@@ -30,6 +30,17 @@
     <button class="btn-primary">submit</button>
    </form>
 
-
+   {% for vie in vi %}
+   <div class="card mb-1 bg-black text-white">
+     
+     <div class=" card-body py-1 px-3">
+       <div class=" col-sm-8 d-flex justify-content-between align-items-center ">
+         <p class="col-sm-2 card-text h6">{{ vie.id_escuela }}</p>
+         <h5 class="col-sm-3 card-text h6">{{ vie.id_estudiante }}</h5>
+         <p class="col-sm-3 card-text h6">{{ vie.id_curso }}</p>
+       </div>
+     </div>
+   </div>
+ {% endfor %}
 
 {% endblock %}

@@ -10,8 +10,8 @@ def main():
 
 @curso.route('/view')
 def view():
-    vista=Curso.query.all()
-    return render_template('curso-template/formulario.html',vista=vista)
+    vis=Curso.query.all()
+    return render_template('curso-template/formulario.html',vis=vis)
 
 
 @curso.route('/add', methods=['POST'])

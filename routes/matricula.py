@@ -13,10 +13,11 @@ def main():
 
 @matricula.route('/vist')
 def vist():
+    vi=Matricula.query.all()
     vista=Escuela.query.all()
-    vi=Estudiante.query.all()
+    vist=Estudiante.query.all()
     vis=Curso.query.all()
-    return render_template('matricula-template/formulario.html',vista=vista,vi=vi,vis=vis)
+    return render_template('matricula-template/formulario.html',vista=vista,vist=vist,vis=vis,vi=vi)
 
 @matricula.route('/add', methods=['POST'])
 def add():
