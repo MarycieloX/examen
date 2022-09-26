@@ -8,8 +8,8 @@ escuela = Blueprint('escuela',__name__)
 def main():
     return render_template('layout.html')
 
-@escuela.route('/view')
-def view():
+@escuela.route('/viste')
+def viste():
     vista=Escuela.query.all()
     return render_template('escuela-template/formulario.html',vista=vista)
 

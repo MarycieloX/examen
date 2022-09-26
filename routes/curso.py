@@ -24,3 +24,4 @@ def add():
     db.session.commit()
 
     return render_template('curso-template/formulario.html')
+

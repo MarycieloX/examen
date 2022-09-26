@@ -1,5 +1,8 @@
 from flask import Blueprint,render_template, request
+from models.curso import Curso
+from models.estudiante import Estudiante
 from models.matricula import Matricula
+from models.escuela import Escuela
 from utils.db import db
 
 matricula = Blueprint('matricula',__name__)
@@ -8,10 +11,12 @@ matricula = Blueprint('matricula',__name__)
 def main():
     return render_template('layout.html')
 
-@matricula.route('/view')
-def view():
-    vista=matricula.query.all()
-    return render_template('matricula-template/formulario.html',vista=vista)
+@matricula.route('/vist')
+def vist():
+    vista=Escuela.query.all()
+    vi=Estudiante.query.all()
+    vis=Curso.query.all()
+    return render_template('matricula-template/formulario.html',vista=vista,vi=vi,vis=vis)
 
 @matricula.route('/add', methods=['POST'])
 def add():

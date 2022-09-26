@@ -1,5 +1,5 @@
 from flask import Flask
-
+from routes.matricula import matricula
 from routes.escuela import escuela
 from routes.estudiante import estudiante
 from routes.curso import curso
@@ -19,6 +19,8 @@ app.register_blueprint(curso)
 app.register_blueprint(estudiante)
 
 app.register_blueprint(escuela)
+
+app.register_blueprint(matricula)
 
 
 

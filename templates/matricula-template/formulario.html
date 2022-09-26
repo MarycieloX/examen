@@ -1,0 +1,35 @@
+{% extends 'layout.html'%}
+{% block body %}
+<form action="/add" method="post">
+    <ul>
+     <li>
+        <label for="msg">Escuela: </label>
+        <select name="id_escuela"> 
+            {% for recorrido in vista %}
+            <option value="{{recorrido.id_escuela}}">{{recorrido.nombre}}</option>
+            {% endfor %}
+          </select>
+     </li>
+     <li>
+        <label for="msg">Estudiante: </label>
+        <select name="id_escuela"> 
+          {% for recorrido in vi %}
+          <option value="{{recorrido.id_estudiante}}">{{recorrido.nombres}}</option>
+          {% endfor %}
+        </select>
+     </li>
+     <li>
+        <label for="msg">Curso: </label>
+        <select name="id_escuela"> 
+          {% for recorrido in vis %}
+          <option value="{{recorrido.id_estudiante}}">{{recorrido.nombre}}</option>
+          {% endfor %}
+        </select>
+     </li>
+    </ul>
+    <button class="btn-primary">submit</button>
+   </form>
+
+
+
+{% endblock %}
