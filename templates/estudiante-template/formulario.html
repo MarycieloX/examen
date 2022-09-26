@@ -1,0 +1,44 @@
+{% extends 'layout.html'%}
+{% block body %}
+<form action="/agregar" method="post">
+    <ul>
+        <li>
+            <label for="">DNI: </label>
+            <input type="text" name="dni">
+        </li>
+        <li>
+            <label for="">Apellidos: </label>
+            <input type="text" name="apellidos">
+        </li>
+        <li>
+            <label for="msg">Nombres: </label>
+            <input type="text" name="nombres">
+        </li>
+        <li>
+            <label for="msg">Fecha de Nacimiento: </label>
+            <input type="date" name="fecha_nacimiento">
+        </li>
+        <li>
+            <label for="msg">Sexo: </label>
+            <input type="text" name="sexo">
+        </li>
+    </ul>
+    <button class="btn-primary">submit</button>
+</form>
+
+{% for vi in vist %}
+<div class="card mb-1 bg-black text-white">
+
+    <div class=" card-body py-1 px-3">
+        <div class=" col-sm-8 d-flex justify-content-between align-items-center ">
+            <p class="col-sm-2 card-text h6">{{ vi.dni }}</p>
+            <h5 class="col-sm-3 card-text h6">{{ vi.apellidos }}</h5>
+            <p class="col-sm-3 card-text h6">{{ vi.nombres }}</p>
+            <p class="col-sm-3 card-text h6">{{ vi.fecha_nacimiento }}</p>
+            <p class="col-sm-3 card-text h6">{{ vi.sexo }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

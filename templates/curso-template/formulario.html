@@ -1,0 +1,34 @@
+{% extends 'layout.html'%}
+{% block body %}
+<form action="/add" method="post">
+    <ul>
+     <li>
+       <label for="Codigo">Codigo</label>
+       <input type="text" name="codigo">
+     </li>
+     <li>
+       <label for="">Nombre</label>
+       <input type="text"  name="nombre">
+     </li>
+     <li>
+       <label for="msg">Creditos</label>
+       <input type="text"  name="credito">
+     </li>
+    </ul>
+    <button class="btn-primary">submit</button>
+   </form>
+
+   {% for view in vista %}
+   <div class="card mb-1 bg-black text-white">
+     
+     <div class=" card-body py-1 px-3">
+       <div class=" col-sm-8 d-flex justify-content-between align-items-center ">
+         <p class="col-sm-2 card-text h6">{{ view.codigo }}</p>
+         <h5 class="col-sm-3 card-text h6">{{ view.nombre }}</h5>
+         <p class="col-sm-3 card-text h6">{{ view.credito }}</p>
+       </div>
+     </div>
+   </div>
+ {% endfor %}
+
+{% endblock %}
